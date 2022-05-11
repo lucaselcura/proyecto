@@ -1,11 +1,13 @@
 package com.proyecto.proyecto.services;
 
+import com.proyecto.proyecto.exception.UserNotFoundException;
 import com.proyecto.proyecto.models.Usuario;
 import com.proyecto.proyecto.repository.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
 @Service
@@ -31,5 +33,9 @@ public class UsuarioService {
     }
     public void borrarUsuario(Long id) {
         usuarioRepo.deleteById(id);
+    }
+
+    public Usuario buscarUsuarioPorId (Long id) {
+        return usuarioRepo.findById(id).orElseThrow(()-> new UserNotFoundException("usuario no encontrado"));
     }
 }
