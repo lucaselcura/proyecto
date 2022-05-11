@@ -1,6 +1,5 @@
 package com.proyecto.proyecto.services;
 
-import com.proyecto.proyecto.models.Educacion;
 import com.proyecto.proyecto.models.Usuario;
 import com.proyecto.proyecto.repository.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import java.util.List;
 @Transactional
 
 public class UsuarioService {
-    prvate final UsuarioRepo usuarioRepo;
+    private final UsuarioRepo usuarioRepo;
 
     @Autowired
     public UsuarioService (UsuarioRepo usuarioRepo){
