@@ -34,7 +34,7 @@ public class EducacionController {
         return new ResponseEntity<>(nuevaEducacion,HttpStatus.CREATED);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
         public ResponseEntity<?> borrarEducacion(@PathVariable("id") Long id){
             educacionService.borrarEducacion(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
